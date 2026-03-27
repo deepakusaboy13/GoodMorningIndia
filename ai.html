@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Morning Delhi</title>
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 20px;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    position:relative;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background:#f1f1f1;
+}
+
+.logo {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:clamp(16px,4vw,26px);
+    font-weight:700;
+}
+
+.orange { color:#ff9933; }
+.white { color:#fff; }
+.green { color:#138808; }
+
+.nav-links {
+    display:flex;
+    gap:15px;
+}
+
+.nav-links a {
+    text-decoration:none;
+    color:white;
+    padding:7px 15px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.15);
+    transition:0.3s;
+}
+
+.nav-links a:hover {
+    background:#ff9933;
+    color:black;
+}
+
+.free {
+    background:linear-gradient(45deg,#ff416c,#ff4b2b);
+}
+
+.menu-icon {
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+    color:white;
+}
+
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    line-height:1.6;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container{
+    width:95%;
+    max-width:1000px;
+    margin:30px auto;
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* ===== TEXT ===== */
+p{
+    font-size:15px;
+    color:#444;
+    margin-bottom:12px;
+}
+
+h2{
+    margin-top:25px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+h3{
+    margin-bottom:8px;
+    color:#333;
+}
+
+.highlight{
+    color:#0077cc;
+    font-weight:bold;
+}
+
+/* ===== LIST ===== */
+ul{
+    margin-left:20px;
+    margin-bottom:15px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+/* ===== BANNER ===== */
+.banner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    flex-wrap:wrap;
+
+    padding:25px;
+    margin:25px 0;
+    border-radius:15px;
+
+    background:linear-gradient(135deg,#ff416c,#ff4b2b,#ff9a44);
+    color:#fff;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+    position:relative;
+    overflow:hidden;
+}
+
+/* Glow effect */
+.banner::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle,rgba(255,255,255,0.2),transparent 60%);
+    top:-50%;
+    left:-50%;
+    animation:moveGlow 6s linear infinite;
+    color: white;
+}
+
+@keyframes moveGlow{
+    0%{transform:translate(0,0);}
+    50%{transform:translate(50%,50%);}
+    100%{transform:translate(0,0);}
+}
+
+/* Text section */
+.banner h2{
+    font-size:28px;
+    margin-bottom:8px;
+    font-weight:700;
+    color: white;
+}
+
+.banner p{
+    font-size:15px;
+    opacity:0.95;
+    color: white;
+}
+
+/* Image */
+.banner img{
+    width:180px;
+    max-width:100%;
+    border-radius:12px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+    transition:0.4s;
+}
+
+/* Hover effect */
+.banner img:hover{
+    transform:scale(1.08) rotate(-2deg);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width:768px){
+    .banner{
+        flex-direction:column;
+        text-align:center;
+        padding:20px;
+        color: white;
+    }
+
+    .banner h2{
+        font-size:24px;
+        color: white;
+    }
+
+    .banner img{
+        width:220px;
+    }
+}
+
+/* Mobile */
+@media (max-width:480px){
+    .banner{
+        padding:18px;
+        color: white;
+    }
+
+    .banner h2{
+        font-size:20px;
+        color: white;
+    }
+
+    .banner p{
+        font-size:14px;
+        color: white;
+    }
+
+    .banner img{
+        width:100%;
+        max-width:250px;
+    }
+}
+/* ===== SECTIONS ===== */
+.section{
+    margin-top:20px;
+    padding:15px;
+    background:#f9fbfd;
+    border-left:4px solid #0d9aa5;
+    border-radius:6px;
+}
+
+/* ===== CODE BLOCK ===== */
+code{
+    background:#eee;
+    padding:4px 6px;
+    border-radius:5px;
+    font-size:13px;
+}
+
+/* ===== HOVER EFFECT ===== */
+.section:hover{
+    background:#f1f7fa;
+    transition:0.3s;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width:768px){
+
+    .container{
+        padding:18px;
+    }
+
+    
+}
+
+/* Mobile */
+@media (max-width:480px){
+
+    p{
+        font-size:14px;
+    }
+
+    h2{
+        font-size:18px;
+    }
+
+    h3{
+        font-size:16px;
+    }
+
+    .container{
+        padding:15px;
+    }
+}
+
+.container-2{
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.header {
+    border-top: 8px solid #1aa085;
+}
+
+h1 {
+    margin: 0 0 10px;
+}
+
+.info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.required {
+    color: red;
+    font-size: 13px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus {
+    border-bottom: 2px solid #1aa085;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1aa085;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #148f77;
+}
+
+/* ===== RELATED POSTS (ADVANCED STYLE) ===== */
+
+.related-posts {
+    max-width: 1100px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.related-posts h3 {
+    text-align: left;
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.posts-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.post-card {
+    width: 320px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.post-card:hover {
+    transform: translateY(-6px);
+}
+
+/* IMAGE STYLE LIKE YOUR SCREENSHOT */
+.post-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* TITLE */
+.post-title {
+    font-size: 15px;
+    color: #2c3e50;
+    margin: 10px 5px;
+    line-height: 1.4;
+}
+
+/* DATE */
+.post-date {
+    font-size: 12px;
+    color: #777;
+    margin-left: 5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .posts-grid{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+#interstitialAd{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.ad-box{
+    width:90%;
+    max-width:350px;
+    background:#fff;
+    padding:15px;
+    border-radius:10px;
+    position:relative;
+}
+
+.ad-box span{
+    position:absolute;
+    right:10px;
+    top:5px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+
+
+<!-- NAVBAR -->
+<div class="navbar">  
+
+   
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links">
+        <a href="#" onclick="home()" >Home</a>
+    </div>
+
+    <div class="logo">
+        <span class="orange">Good</span>
+        <span class="white">Morning</span>
+        <span class="green">India</span>
+    </div>
+
+    <div class="nav-links" id="menu">
+        <a href="#" onclick="home()"  class="free">Free Product</a>
+    </div>
+
+</div>
+
+<!-- Google AdSense Script -->
+<script async 
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-app-pub-2176453325456288/8987025964"
+crossorigin="anonymous"></script>
+
+<!-- TOP BANNER AD -->
+<div style="text-align:center; margin:10px 0;">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-app-pub-2176453325456288/8987025964"
+         data-ad-slot="8987025964"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+</div>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <p><b> AI+ Pulse </b>Poco is known for one thing  <span class="highlight"></span>  <span class="highlight"></span>, <span class="highlight"></span>a new player from NxtQuantum Shift Technologies. It's led by Madhav Sheth, a name you might recognize from his days at Realme. But this isn't just another smartphone launch. It's a statement.</p>
+
+    <p><i></i></p>
+
+
+    <div class="banner">
+        <div>
+            <h2>AI+ Pulse </h2>
+            <p>Why Smart Students are Buying Used Corporate phone ...</p>
+        </div>
+        <img id="img11" src="https://static.digit.in/ai-plus-smartphone-launch-and-features.jpg">
+    </div>
+
+    <h2>Why Used? The "Corporate" Secret</h2>
+
+    <p>The Specs: 12.1-inch 2.5K LCD Display with 120Hz Refresh Rate.
+
+The Experience:
+
+Ideally, tablets are 10-11 inches. This one is 12.1 inches. It feels massive.
+
+Watching Netflix or YouTube? Its a treat. The colors are punchy (Dolby Vision support), and the brightness (600 nits) is decent for indoor use.
+
+The Aspect Ratio (16:10): This is perfect for movies. You won't see those thick black bars that irritate you on iPads.</p>
+
+    <ul>
+        <li><b>New Plastic phone pad  (₹25,000):</b> Weak hinges, bad screen, slow processor after 1 year.</li>
+        <li><b>Used Business phone pad (₹23,000):</b> Metal body, GMBVerdict: If you want a device strictly for "Bingewatching," this is a jackpot  </li>
+    </ul>
+
+    <p><b>Student Benefit:</b> You save money for your canteen bills and still get a machine that can handle coding, Tally, and more.</p>
+
+    <h2>The "Savdhaan India" Checklist: Check These Before Paying!</h2>
+
+    <p>Don't just blindly trust the shopkeeper who says, <i>"Sir, ekdum fresh maal hai."</i> (Sir, it's brand new stuff). Be a detective. Here is your checklist:</p>
+
+   
+    <div class="section">
+    
+       <h3>1. The Dabangg Difference: Indian Tech, Indian Data </h3>
+        <p> Here's the part that's not widely covered: AI+ is not just a Made in India phone; it's a Made for India phone.
+
+Sovereign OS: The phones run on something called NxtQuantum OS, which is their own operating system based on Android. They claim its been developed entirely in India.The asli baat (real talk) is that this OS is built to be clean, without bloatware.
+
+
+Data Stays Desi: This is their biggest USP (unique selling point) in a world worried about data privacy. AI+ claims that all user data is stored on servers within India.This is a big deal and aligns with India's push for data sovereignty. Its a direct challenge to foreign brands that store data overseas.
+
+
+
+AI for the Aam Aadmi (Common Man): AI isnt just for fancy photos. On these phones, AI is meant to simplify things, helping bridge the language and literacy gap.The AI is trained on local Indian data sets, which theoretically makes features like voice assistance and translation more relevant and helpful for a diverse nation.</p>
+    </div>
+
+<!-- Google AdSense Script -->
+<script async 
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-app-pub-2176453325456288/6525348307"
+crossorigin="anonymous"></script>
+
+    <!-- MIDDLE 2 AD -->
+<div style="text-align:center; margin:20px 0;">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-app-pub-2176453325456288/6525348307"
+         data-ad-slot="8987025964"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+</div>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+</script>
+
+    <div class="section">
+        <h3>2.Beyond the Specs: The Asli Startup Strategy </h3>
+        <p>While the specs (50MP camera, 5000mAh battery) are competitive for their starting price of around ₹5,500, the true business strategy lies elsewhere.</p>
+        <ul>
+            <li>The PLI Push: AI+ is leveraging the government's Production Linked Incentive (PLI) scheme. They're not just assembling phones; theyre working to create a local component ecosystem.They have a factory in Noida and a plan to increase local value addition over time.</li>
+            <li> The Flipkart Partnership: They've launched exclusively on Flipkart.This partnership gives them instant nationwide reach and credibility, without the massive investment in building an offline retail network from scratch.</li>
+            <li>Not Just Price, but Value: Sheth has stated that they aren't about just kam-daam (low price). Their goal is to offer a value-driven product.They wont release a new model unless it has an innovative feature, ensuring that their brand stands for something more than just cheap phones.</li>
+        </ul>
+        <p>Check the "Full Charge Capacity" vs "Design Capacity". If it's below 70%, ask for a discount or a new battery.</p>
+    </div>
+
+    <div class="section">
+        <h3>3.  AI+ Pulse isn't just another competitor</h3>
+        <p>AI+ Pulse isn't just another competitor in the crowded smartphone market. It's a symbol of India's ambition to be a leader in tech, not just a consumer. By focusing on trust, data privacy, and building a product for India, they're playing a long game that might just shake up the entire industry. Its a startup to watch very closely.</p>
+    </div>
+
+</div>
+
+<!-- Google AdSense Script -->
+<script async 
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-app-pub-2176453325456288/6017948392"
+crossorigin="anonymous"></script>
+
+<!-- MIDDLE AD -->
+<div style="text-align:center; margin:20px 0;">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-app-pub-2176453325456288/6017948392"
+         data-ad-slot="8987025964"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+</div>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div class="container-2">
+
+    <!-- Header -->
+    <div class="card header">
+        <h1>Request a Sample Unit</h1>
+        <div class="info">
+            <p>This Will Be a Trial Pack.</p>
+            <p>Delivery Will Take 30 Days.</p>
+            <p>No Need To Pay a Single Penny.</p>
+            <p>All Rights Are Reserved With Company and Can Change Anytime If Required.</p>
+        </div>
+        <p class="required">* Indicates required question</p>
+    </div>
+
+    <form>
+
+        <div class="card">
+            <label>Name *</label>
+            <input type="text" required>
+        </div>
+
+        <div class="card">
+            <label>Email *</label>
+            <input type="email" required>
+        </div>
+
+        <div class="card">
+            <label>Full Shipping Address *</label>
+            <input type="text" required>
+        </div>
+
+        <div class="card">
+            <label>Phone Number *</label>
+            <input type="tel" required>
+        </div>
+
+        <div class="card">
+            <label>Pin Code *</label>
+            <input type="number" required>
+        </div>
+
+        <div class="card">
+            <label>City *</label>
+            <input type="text" required>
+        </div>
+
+        <div class="card">
+            <label>District *</label>
+            <input type="text" required>
+        </div>
+
+        <div class="card">
+            <label>State *</label>
+            <input type="text" required>
+        </div>
+
+        <div class="card">
+            <label>Instagram/Facebook/Other Social Media Profile Link *</label>
+            <input type="url" required>
+        </div>
+
+        <div class="card">
+            <label>How Many People See Your Story on Whatsapp and Instagram? *</label>
+            <input type="number" required>
+        </div>
+
+        <div class="card">
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+
+   <!-- YOU MAY LIKE THESE POSTS -->
+<div class="related-posts">
+
+    <h3>YOU MAY LIKE THESE POSTS</h3>
+
+    <div class="posts-grid">
+
+        <!-- Post 1 -->
+        <div class="post-card" onclick="openpocoPage()" >
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNnamU5M4MCOXeyZvGhFthrtGC9PJPJOLGA-9C79sTGWXcBIs7fHfLRBaqaJPytnR1SXVnGjkOmebw-ksmqC3dStLBLZOynA6QTsJgYhjpMd-UIBQSjjt3PkD9jW6vmTyL219pHi8l7d-bWltbYcBA496xAO9BHZoXVsicUjSkQ1cOWIXRwQ-G8bWGW1sU/w320-h167/poco%20review.png=w352-h185-p-k-no-nu" alt="">
+            <p class="post-title">
+                POCO Pad 5G Review: Is This 12-inch 'Giant' the New King or Just a Big Screen Bluff?
+            </p>
+            <span class="post-date">• March 25, 2026</span>
+        </div>
+
+        <div style="display:flex; gap:10px; align-items:center; margin:20px 0; padding:10px; border:1px solid #eee; border-radius:10px;">
+    
+    <div style="width:80px;">
+        <img src="https://via.placeholder.com/80" style="width:100%; border-radius:8px;">
+    </div>
+
+    <div style="flex:1;">
+        <p style="font-size:12px; color:#999;">Ad • Sponsored</p>
+
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-format="fluid"
+             data-ad-layout-key="-gw-1+2a-9x+5c"
+             data-ad-client="ca-app-pub-2176453325456288/1228656141"
+             data-ad-slot="8987025964"></ins>
+    </div>
+</div>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <!-- Post 2 -->
+        <div class="post-card" onclick="openChocolatePage()"> 
+            <img src=https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_bzrO_NS5owXUrA8_4FkmRAXxVtlAeBc4tQCFrIEdqqLUA05YQHa6srG4BtDSMGsh52820F3PZc5CVE8nzVVsVxUNHkoMZY_td7qU4qRBjSsXBOYIDff0KsQDf_iZxEk-BOsnGcaCklwwboG0bhKtABvHDv1FAaHHlKYOba2zF4c0oNDCXEMVR9v-JJQw/s320/chocolate.png=w352-h185-p-k-no-nu"" alt="">
+            <p class="post-title">
+                'Meetha' Mane Cadbury? Not Anymore! Reality of India's Top 5 Chocolate Brands
+            </p>
+            <span class="post-date">• march 01, 2026</span>
+        </div>
+
+
+        <!-- Post 3 -->
+        <div class="post-card" onclick="openlaptopPage()" >
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidyapw5KTs8tOyA6PiVwnWfpcHHp0-4J82CKkAqojfgRCOQXTRTZ-hYU0SayLqhfI7O1MXUC9f8BmYjIFaEH59mikpfhtEOC1z5l0q9LmP9RQDA7LqjortIUjTnAAH_Fo2HlFubU3iPyETk1TxSi1AeRinti1gSM7__wp8bQlpfELSfIxS8xBCcNzlxgeG/s320/Used%20laptops.png=w352-h185-p-k-no-nu" alt="">
+            <p class="post-title">
+              New Laptop or Second-Hand 'Beast'? Why Smart Students are Buying Used Corporate Laptops!
+            </p>
+            <span class="post-date">• march 29, 2026</span>
+        </div>
+
+    </div>
+
+    <div style="display:flex; gap:10px; align-items:center; margin:20px 0; padding:10px; border:1px solid #eee; border-radius:10px;">
+    
+    <div style="width:80px;">
+        <img src="https://via.placeholder.com/80" style="width:100%; border-radius:8px;">
+    </div>
+
+    <div style="flex:1;">
+        <p style="font-size:12px; color:#999;">Ad • Sponsored</p>
+
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-format="fluid"
+             data-ad-layout-key="-gw-1+2a-9x+5c"
+             data-ad-client="ca-app-pub-2176453325456288/5167901151"
+             data-ad-slot="8987025964"></ins>
+    </div>
+</div>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+</div>
+
+
+
+
+
+<script>
+    function home(){
+    window.location.href = "index.html";
+}
+
+function openChocolatePage(){
+    window.location.href = "Chocolate.html";
+}
+function openpocoPage(){
+    window.location.href = "poco.html";
+}
+function openlaptopPage(){
+    window.location.href = "laptop.html";
+}
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+</script>
+
+
+
+
+</body>
+</html>
